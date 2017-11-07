@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015/11/19 ?U?? 04:17:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sf.learning.hibernate.model.ArticleType" table="ARTICLE_TYPE">
+        <id name="articleTypeId" type="long">
+            <column name="ARTICLE_TYPE_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+    </class>
+</hibernate-mapping>

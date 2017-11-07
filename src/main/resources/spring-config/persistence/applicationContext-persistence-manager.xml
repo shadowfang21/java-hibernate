@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+	<bean depends-on="dataSource"
+		class="org.springframework.beans.factory.config.MethodInvokingBean">
+		<property name="targetClass" value="org.hsqldb.util.DatabaseManagerSwing" />
+		<property name="targetMethod" value="main" />
+		<property name="arguments">
+			<list>
+				<value>--url</value>
+				<value>${hsqldb.url}</value>
+				<value>--user</value>
+				<value>${hsqldb.user}</value>
+				<value>--password</value>
+				<value>${hsqldb.password}</value>
+			</list>
+		</property>
+	</bean>
+</beans>
